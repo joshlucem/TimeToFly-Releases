@@ -4,7 +4,7 @@ Official releases repository for TimeToFly plugin.
 
 ## Download
 
-Visit the [releases](releases/) folder to download the latest version.
+Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) folder to download the latest version.
 
 ### Latest Version: 1.0.3
 
