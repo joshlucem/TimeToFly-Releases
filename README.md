@@ -39,7 +39,7 @@ Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) f
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE.md) file for details.
+See [LICENSE](LICENSE.md) file for details.
 
 ---
 
