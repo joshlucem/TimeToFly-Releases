@@ -113,7 +113,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/) and th
 
 ## Download
 
-Visit the [releases](releases/) folder to download the latest version.
+Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) folder to download the latest version.
 
 ## Support
 
