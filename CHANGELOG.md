@@ -4,6 +4,40 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.1] - 2026-02-01
+
+### 🐛 Critical Fixes
+
+#### Server Thread Blocking Fix
+- **CRITICAL:** Fixed server blocking when players connect
+- `FlightListener.onPlayerJoin` is now fully asynchronous
+- Database operations no longer block the main thread
+- New `getCachedPlayerData()` method for quick non-blocking checks
+- `getPlayerDataAsync()` now returns immediately if data is cached
+- Prevents connection timeouts with SQLite (pool size = 1)
+
+### ✨ New Features
+
+#### Colored Console Logging System
+- New console logging system with ANSI colors
+- Stylized startup banner with plugin version
+- Logs categorized by component (DB, CACHE, PLAYER, MENU, etc.)
+- Visual symbols for success (✓), error (✗), and warnings (⚠)
+- Improved debug mode with detailed and colored information
+- Consistent formatting for better readability
+
+#### New Classes
+- `ConsoleColors.java` - ANSI color constants
+- `PluginLogger.java` - Enhanced logger with pretty formatting
+
+### 🔧 Improvements
+- Components displayed individually when loading
+- Better log organization by sections
+- Clearer status information for optional integrations
+- FlightListener completely rewritten to be non-blocking
+
+---
+
 ## [1.1.0] - 2026-02-01
 
 ### ✨ New Features
@@ -89,8 +123,8 @@ flight:
 ### 📝 New Messages
 ```yaml
 fly:
-  soft-landing-start: "Flight time depleted! Landing safely..."
-  soft-landing-complete: "You have landed safely."
+  soft-landing-start: "⚠ Flight time depleted! Landing safely..."
+  soft-landing-complete: "✓ You have landed safely."
   soft-landing-timeout: "Soft landing has ended."
 ```
 

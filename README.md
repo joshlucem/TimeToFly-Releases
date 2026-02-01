@@ -6,7 +6,12 @@ Official releases repository for TimeToFly plugin.
 
 Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) folder to download the latest version.
 
-### Latest Version: 1.1.0
+### Latest Version: 1.1.1
+
+**New in 1.1.1:**
+- 🎨 **Colored Console Logs** - Beautiful formatted logs with ANSI colors
+- 📊 **Categorized Debug** - Better organized debug information
+- ✨ **Visual Status Indicators** - Clear symbols for success, error, and warnings
 
 **New in 1.1.0:**
 - 🗄️ **MySQL/MariaDB Support** - Perfect for server networks
@@ -33,7 +38,7 @@ Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) f
 
 ### Installation
 
-1. Download `TimeToFly-1.1.0.jar` from the releases folder
+1. Download `TimeToFly-1.1.1.jar` from the releases folder
 2. Place it in your `plugins/` folder
 3. Restart your server
 4. Configure in `plugins/TimeToFly/`
