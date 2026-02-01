@@ -6,14 +6,21 @@ Official releases repository for TimeToFly plugin.
 
 Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) folder to download the latest version.
 
-### Latest Version: 1.0.3
+### Latest Version: 1.1.0
 
-**Features:**
+**New in 1.1.0:**
+- 🗄️ **MySQL/MariaDB Support** - Perfect for server networks
+- ⚡ **In-Memory Cache** - Faster performance with Caffeine
+- 🪂 **Soft Landing** - Fall damage protection when time runs out
+- 🔄 **Async Operations** - No main thread lag
+- 💬 **Optional Messages** - Disable redundant messages with `""`
+
+**Core Features:**
 - ✈️ Advanced flight time management system
 - 🎨 10+ customisable particle effects
 - 📊 PlaceholderAPI integration (12+ placeholders)
 - ⚙️ Interactive configuration menus
-- 💾 SQLite database with auto-purge
+- 💾 SQLite & MySQL database support
 - 🌍 World control & WorldGuard support
 - 🎭 ItemsAdder compatibility
 - 📝 MiniMessage message formatting
@@ -26,10 +33,23 @@ Visit the [releases](https://github.com/joshlucem/TimeToFly-Releases/releases) f
 
 ### Installation
 
-1. Download `TimeToFly-1.0.3.jar` from the releases folder
+1. Download `TimeToFly-1.1.0.jar` from the releases folder
 2. Place it in your `plugins/` folder
 3. Restart your server
 4. Configure in `plugins/TimeToFly/`
+
+### Configuration for MySQL (Optional)
+
+```yaml
+database:
+  type: mysql
+  mysql:
+    host: localhost
+    port: 3306
+    database: timetofly
+    username: root
+    password: "your_password"
+```
 
 ## Support
 

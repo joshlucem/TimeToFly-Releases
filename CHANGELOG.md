@@ -4,6 +4,101 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/) and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - 2026-02-01
+
+### ✨ New Features
+
+#### MySQL/MariaDB Support
+- New support for MySQL and MariaDB databases
+- Ideal for server networks (BungeeCord/Velocity)
+- Simple configuration in `config.yml` with selectable database type
+- Connection pooling with HikariCP for better performance
+- Full compatibility with existing SQLite databases
+
+#### In-Memory Cache System
+- Implemented cache with Caffeine to reduce database queries
+- Configurable automatic expiration (default 10 minutes)
+- Configurable maximum cache size (default 1000 players)
+- Significant latency reduction for frequent operations
+- Pre-loading of data when players join
+- Cache invalidation methods available
+
+#### Soft Landing
+- New fall damage protection when flight time runs out
+- Automatic Slow Falling effect when time depletes
+- Configurable landing period duration (default 5 seconds)
+- Experimental Elytra-style gliding option
+- Customizable fall speed
+- Automatic fall damage cancellation during landing
+- Customizable messages for start, complete, and timeout
+
+#### Async Database Operations
+- All write operations are now asynchronous
+- Significant server performance improvement
+- No main thread lag from database access
+- `CompletableFuture` methods available for developers
+- Automatic cache flush when server closes
+
+#### Optional Messages
+- Empty messages (`""`) are no longer sent
+- Allows disabling redundant messages as preferred
+- New `sendMessage()` methods with boolean return
+- `isMessageEmpty()` method to check messages
+- Documented in `messages.yml` with examples
+
+#### Update Checker
+- Automatic check for new versions on server start
+- Admin notification when joining the server
+- Clickable download link in chat
+- Configurable in `config.yml`
+- Permission: `timetofly.admin.updates`
+
+#### Automatic Config Updater
+- Configuration files are automatically updated when installing new versions
+- Preserves all user-customized values
+- Adds new options without losing existing configuration
+- Creates automatic backups before updating (`plugins/TimeToFly/backups/`)
+- Internal versioning system (`config-version`)
+
+### 🔧 New Configuration
+
+```yaml
+database:
+  type: sqlite  # or "mysql" / "mariadb"
+  mysql:
+    host: localhost
+    port: 3306
+    database: timetofly
+    username: root
+    password: ""
+    use-ssl: false
+  pool-size: 10
+  cache:
+    expire-minutes: 10
+    max-size: 1000
+
+flight:
+  soft-landing:
+    enabled: true
+    duration-ticks: 100
+    use-slow-falling: true
+    use-elytra-glide: false
+    fall-speed: 0.3
+```
+
+### 📝 New Messages
+```yaml
+fly:
+  soft-landing-start: "Flight time depleted! Landing safely..."
+  soft-landing-complete: "You have landed safely."
+  soft-landing-timeout: "Soft landing has ended."
+```
+
+### 📦 Added Dependencies
+- HikariCP 5.1.0 (Connection pooling)
+- MySQL Connector/J 8.2.0
+- Caffeine 3.1.8 (In-memory cache)
+
 ## [1.0.3] - 2026-01-29
 
 ### 🐛 Fixed
